@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Master Bakers Menu — Browse our full selection of bakery items, snacks, beverages and desserts. Order online at Hudson Lane, Delhi.">
+  <title>Menu — Master Bakers</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/menu.css">
+</head>
+<body>
+
+  <!-- ═══════════════ NAVBAR ═══════════════ -->
+  <nav id="navbar" class="solid">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-icon">🥐</div>
+        <div class="nav-logo-text">
+          <div class="name">Master Bakers</div>
+          <div class="since">Est. 1992 · Hudson Lane</div>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html" class="active">Menu</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="menu.html" class="nav-cta">Order Now</a>
+      </div>
+      <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══════════════ MOBILE MENU ═══════════════ -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="menu.html">Menu</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="menu.html" style="color:#d4a243 !important;">🛒 Order Now</a>
+  </div>
+
+  <!-- ═══════════════ PAGE HERO ═══════════════ -->
+  <div class="page-hero">
+    <h1>Our Full Menu</h1>
+    <p>From oven-fresh croissants to hearty sandwiches and aromatic coffee — there's something for every craving.</p>
+    <div class="breadcrumb">
+      <a href="index.html">Home</a> <span>›</span> <span>Menu</span>
+    </div>
+  </div>
+
+  <!-- ═══════════════ MENU PAGE ═══════════════ -->
+  <div class="menu-page">
+    <div class="menu-inner">
+
+      <!-- QR Ordering Notice -->
+      <div style="
+        background: linear-gradient(135deg, #fff9f0, #fff3e0);
+        border: 2px solid #f0d090;
+        border-radius: 16px;
+        padding: 1.25rem 1.5rem;
+        margin-bottom: 2rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      ">
+        <span style="font-size:2rem;">📱</span>
+        <div>
+          <strong style="color:var(--brown-dark);display:block;margin-bottom:.2rem;">You're ordering via QR</strong>
+          <span style="font-size:.88rem;color:var(--text-light);">Tap any "Order" button to add items. Your order goes straight to the kitchen — no waiter needed!</span>
+        </div>
+      </div>
+
+      <!-- Filter Bar -->
+      <div class="filter-bar">
+        <span class="filter-label">Filter:</span>
+        <button class="filter-btn active" data-filter="all">All Items</button>
+        <button class="filter-btn" data-filter="bakery">🥐 Bakery</button>
+        <button class="filter-btn" data-filter="snacks">🥪 Snacks</button>
+        <button class="filter-btn" data-filter="beverages">☕ Beverages</button>
+        <button class="filter-btn" data-filter="desserts">🍰 Desserts</button>
+        <div class="search-wrap">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="menu-search" placeholder="Search menu...">
+        </div>
+      </div>
+
+      <!-- Menu Container (JS renders here) -->
+      <div id="menu-container">
+        <div style="text-align:center;padding:4rem;color:var(--text-light);">
+          <div style="font-size:2rem;margin-bottom:.5rem;">🍞</div>
+          Loading menu...
+        </div>
+      </div>
+
+      <!-- QR CTA -->
+      <div class="qr-cta">
+        <h3>Sitting in? Scan to Order</h3>
+        <p>Each table has a QR code. Scan it, browse this menu, and place your order without calling for a waiter.</p>
+        <div style="display:inline-block;background:#fff;border-radius:12px;padding:1rem;margin-bottom:1.5rem;">
+          <!-- Simple SVG QR placeholder -->
+          <svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <rect width="100" height="100" fill="white"/>
+            <!-- QR corners -->
+            <rect x="5" y="5" width="30" height="30" rx="3" fill="none" stroke="#2c1a0e" stroke-width="3"/>
+            <rect x="10" y="10" width="20" height="20" rx="2" fill="#2c1a0e"/>
+            <rect x="65" y="5" width="30" height="30" rx="3" fill="none" stroke="#2c1a0e" stroke-width="3"/>
+            <rect x="70" y="10" width="20" height="20" rx="2" fill="#2c1a0e"/>
+            <rect x="5" y="65" width="30" height="30" rx="3" fill="none" stroke="#2c1a0e" stroke-width="3"/>
+            <rect x="10" y="70" width="20" height="20" rx="2" fill="#2c1a0e"/>
+            <!-- Pattern dots -->
+            <rect x="45" y="5" width="5" height="5" fill="#2c1a0e"/>
+            <rect x="55" y="5" width="5" height="5" fill="#2c1a0e"/>
+            <rect x="45" y="15" width="5" height="5" fill="#2c1a0e"/>
+            <rect x="55" y="25" width="5" height="5" fill="#2c1a0e"/>
+            <rect x="45" y="35" width="5" height="5" fill="#2c1a0e"/>
+            <rect x="65" y="45" width="5" height="5" fill="#2c1a0e"/>
+            <rect x="75" y="45" width="5" height="5" fill="#2c1a0e"/>
+            <rect x="85" y="55" width="5" height="5" fill="#2c1a0e"/>
+            <rect x="45" y="55" width="5" height="5" fill="#2c1a0e"/>
+            <rect x="45" y="75" width="5" height="5" fill="#2c1a0e"/>
+            <rect x="55" y="85" width="5" height="5" fill="#2c1a0e"/>
+            <rect x="65" y="75" width="5" height="5" fill="#2c1a0e"/>
+            <rect x="75" y="85" width="5" height="5" fill="#2c1a0e"/>
+            <rect x="85" y="65" width="5" height="5" fill="#2c1a0e"/>
+            <rect x="35" y="45" width="5" height="5" fill="#2c1a0e"/>
+            <rect x="5" y="45" width="5" height="5" fill="#2c1a0e"/>
+            <rect x="15" y="55" width="5" height="5" fill="#2c1a0e"/>
+            <rect x="25" y="45" width="5" height="5" fill="#2c1a0e"/>
+          </svg>
+        </div>
+        <p style="font-size:.78rem;opacity:.6;margin-top:-.5rem;margin-bottom:1.5rem;">Sample QR — each table has a unique code</p>
+        <a href="tel:+918743990330" class="btn-primary">📞 Call to Order: 87439 90330</a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══════════════ FOOTER ═══════════════ -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="brand-name">Master Bakers</div>
+        <div class="tagline">Freshly Baked Happiness Since 1992</div>
+        <p>Your favourite neighbourhood bakery and casual dining spot on Hudson Lane, Delhi.</p>
+        <div class="social-links">
+          <a href="https://www.instagram.com/masterbakers1992/" target="_blank">📸</a>
+          <a href="tel:+918743990330">📞</a>
+          <a href="contact.html">📍</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Our Menu</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="#">Bakery Items</a></li>
+          <li><a href="#">Snacks & Bites</a></li>
+          <li><a href="#">Beverages</a></li>
+          <li><a href="#">Desserts & Cakes</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Visit Us</h4>
+        <div class="footer-contact-item">
+          <span class="icon">📍</span>
+          <span>Hudson Lane, GTB Nagar, North Campus, Delhi</span>
+        </div>
+        <div class="footer-contact-item">
+          <span class="icon">📞</span>
+          <a href="tel:+918743990330">+91 87439 90330</a>
+        </div>
+        <div class="footer-contact-item">
+          <span class="icon">🕐</span>
+          <span>Mon–Sun: 8:00 AM – 10:00 PM</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 Master Bakers. All rights reserved.</span>
+      <span>Made with ❤️ in Hudson Lane, Delhi</span>
+    </div>
+  </footer>
+
+  <!-- Order Toast -->
+  <div id="order-toast"></div>
+
+  <!-- Cart Button -->
+  <button id="cart-btn" onclick="openCart()">
+    🛒 View Order <span id="cart-count">0</span>
+  </button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/menu.js"></script>
+  <script>
+    // Handle URL category params
+    window.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const cat = params.get('cat');
+      if (cat) {
+        const btn = document.querySelector(`.filter-btn[data-filter="${cat}"]`);
+        if (btn) {
+          document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          renderMenu(cat);
+        }
+      }
+    });
+  </script>
+</body>
+</html>
